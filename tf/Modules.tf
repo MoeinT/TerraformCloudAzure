@@ -1,4 +1,4 @@
 module "Azure" {
-  source = "./Azure"
+  source  = "./Azure"
   project = var.project
 }

@@ -10,8 +10,8 @@ resource "azurerm_databricks_workspace" "databricks-ws" {
 provider "databricks" {
   host                        = azurerm_databricks_workspace.databricks-ws.workspace_url
   azure_workspace_resource_id = azurerm_databricks_workspace.databricks-ws.id
-  azure_client_id             = var.ARM_CLIENT_ID
-  azure_client_secret         = var.ARM_CLIENT_SECRET
+  azure_client_id             = var.client_id
+  azure_client_secret         = var.client_secret
   azure_tenant_id             = data.azurerm_client_config.current.tenant_id
 }
 

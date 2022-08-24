@@ -22,12 +22,12 @@ variable "moein_obj_id" {
   sensitive = true
 }
 
-variable "ARM_CLIENT_ID" {
+variable "client_id" {
   type      = string
   sensitive = true
 }
 
-variable "ARM_CLIENT_SECRET" {
+variable "client_secret" {
   type      = string
   sensitive = true
 }

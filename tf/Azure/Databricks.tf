@@ -19,7 +19,7 @@ provider "databricks" {
 resource "databricks_cluster" "SingleNodeCluster" {
   cluster_name            = "db-cluster-${var.suffix}-${var.environment}"
   spark_version           = "11.1.x-scala2.12"
-  node_type_id            = "Standard_DS4_v2"
+  node_type_id            = "Standard_DS3_v2"
   autotermination_minutes = 10
   num_workers             = 0
 

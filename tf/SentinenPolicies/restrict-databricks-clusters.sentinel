@@ -11,14 +11,3 @@ vialations = length(violatingDBclusters["messages"])
 main = rule {
     vialations is 0
 }
-
-// import "tfplan/v2" as tfplan
-
-// db-clusters = filter tfplan.resource_changes as address, rc {
-//     rc.type is "databricks_cluster" and rc.mode is "managed"
-// }
-
-// main = rule { all db-clusters as address, instance {
-//     instance.change.after.node_type_id in ["Standard_DS3_v2"]
-// }
-// }

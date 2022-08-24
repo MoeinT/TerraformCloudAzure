@@ -4,6 +4,7 @@ resource "azurerm_resource_group" "rg-streamingData" {
   location = var.location
 }
 
+# A sa for each environment
 resource "azurerm_storage_account" "sq-streamingData" {
   name                     = "sa22tfcloud${local.env}"
   resource_group_name      = azurerm_resource_group.rg-streamingData.name

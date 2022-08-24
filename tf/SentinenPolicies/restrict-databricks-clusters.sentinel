@@ -1,20 +1,17 @@
 import "tfplan-functions" as plan
 
-# Filter to Databricks clusters with invalid node types
-
 allowed_nodes = ["Standard_DS3_v2"]
 
 all_db_clusters = plan.find_resources("databricks_cluster")
 
-violatingDBclusters = plan.filter_attribute_not_in_list(all_db_clusters, "node_type_id", allowed_nodes, true)
+violatingDBclusters = plan.filter_attribute_not_in_list(all_db_clusters, 
+                "node_type_id", allowed_nodes, true)
 
 ClustersNodeVialations = length(violatingDBclusters["messages"])
 
 
 
-# Filter to Databricks clusters with invalid max_workers
 max_workers = 5
-
 allClusters = plan.find_resources("databricks_cluster")
 
 ClustersWithInvalidMaxWorkers = plan.filter_attribute_greater_than_value(allClusters,

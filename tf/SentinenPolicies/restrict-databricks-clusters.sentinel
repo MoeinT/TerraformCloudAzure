@@ -13,7 +13,7 @@ ClustersNodeVialations = length(violatingDBclusters["messages"])
 
 
 # Filter to Databricks clusters with invalid max_workers
-param max_workers default 5
+max_workers = 5
 
 allClusters = plan.find_resources("databricks_cluster")
 

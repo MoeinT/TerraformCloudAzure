@@ -11,3 +11,13 @@ variable "environment" {
     error_message = "The environment can be either staging, dev, or prod."
   }
 }
+
+variable "sp_object_id" {
+  type      = string
+  sensitive = true
+}
+
+variable "moein_obj_id" {
+  type      = string
+  sensitive = true
+}

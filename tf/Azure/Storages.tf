@@ -1,12 +1,10 @@
-# A rg for each environment
 resource "azurerm_resource_group" "rg-streamingData" {
-  name     = "rg-${var.suffix}-${local.env}"
+  name     = "rg-${var.suffix}-${var.environment}"
   location = var.location
 }
 
-# A sa for each environment
 resource "azurerm_storage_account" "sq-streamingData" {
-  name                     = "sa22tfcloud${local.env}"
+  name                     = "sa22tfcloud${var.environment}"
   resource_group_name      = azurerm_resource_group.rg-streamingData.name
   location                 = azurerm_resource_group.rg-streamingData.location
   account_tier             = "Standard"

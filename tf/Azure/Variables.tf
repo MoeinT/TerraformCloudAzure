@@ -14,4 +14,7 @@ variable "location" {
   default = "France Central"
 }
 
+variable "environment" {
+  type = string
+}
 

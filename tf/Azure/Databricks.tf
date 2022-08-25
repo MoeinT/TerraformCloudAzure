@@ -23,6 +23,6 @@ resource "databricks_cluster" "db-cluster" {
   autotermination_minutes = 20
   autoscale {
     min_workers = 1
-    max_workers = 5
+    max_workers = 7
   }
 }
